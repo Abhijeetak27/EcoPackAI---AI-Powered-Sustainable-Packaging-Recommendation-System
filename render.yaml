@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ecopackai
+    runtime: python
+    rootDir: .
+    buildCommand: |
+      pip install -r backend/requirements.txt &&
+      cd frontend && npm install && npm run build && cd ..
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: MONGO_URL
+        sync: false        # Set this in Render dashboard to your Atlas connection string
+      - key: DB_NAME
+        value: ecopackai
+      - key: ENV
+        value: prod

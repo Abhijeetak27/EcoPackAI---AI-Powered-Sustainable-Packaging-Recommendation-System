@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 39 33% 95%;
+    --foreground: 153 41% 15%;
+
+    --card: 40 30% 97%;
+    --card-foreground: 153 41% 15%;
+
+    --popover: 40 30% 97%;
+    --popover-foreground: 153 41% 15%;
+
+    --primary: 153 41% 17%;
+    --primary-foreground: 39 33% 95%;
+
+    --secondary: 153 33% 30%;
+    --secondary-foreground: 39 33% 95%;
+
+    --muted: 39 20% 90%;
+    --muted-foreground: 153 15% 40%;
+
+    --accent: 16 76% 51%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 153 15% 82%;
+    --input: 153 15% 82%;
+    --ring: 153 41% 17%;
+
+    --radius: 0.75rem;
+
+    --eco-forest: 153 41% 17%;
+    --eco-teal: 153 33% 30%;
+    --eco-sand: 39 33% 95%;
+    --eco-coral: 16 76% 51%;
+    --eco-leaf: 145 50% 42%;
+    --eco-dark: 153 50% 8%;
+
+    --sidebar-background: 153 41% 12%;
+    --sidebar-foreground: 39 33% 95%;
+    --sidebar-primary: 145 50% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 153 33% 20%;
+    --sidebar-accent-foreground: 39 33% 95%;
+    --sidebar-border: 153 30% 22%;
+    --sidebar-ring: 145 50% 42%;
+  }
+
+  .dark {
+    --background: 153 50% 4%;
+    --foreground: 39 33% 95%;
+    --card: 153 45% 8%;
+    --card-foreground: 39 33% 95%;
+    --popover: 153 45% 8%;
+    --popover-foreground: 39 33% 95%;
+    --primary: 145 50% 42%;
+    --primary-foreground: 153 50% 4%;
+    --secondary: 153 33% 20%;
+    --secondary-foreground: 39 33% 95%;
+    --muted: 153 30% 12%;
+    --muted-foreground: 153 15% 60%;
+    --accent: 16 76% 51%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 153 30% 18%;
+    --input: 153 30% 18%;
+    --ring: 145 50% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .eco-gradient {
+    @apply bg-gradient-to-br from-primary via-secondary to-primary;
+  }
+  .eco-gradient-text {
+    @apply bg-gradient-to-r from-primary to-eco-leaf bg-clip-text text-transparent;
+  }
+  .eco-card {
+    @apply bg-card border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300;
+  }
+  .eco-glass {
+    @apply bg-card/80 backdrop-blur-md border border-border/50;
+  }
+  .eco-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+  .eco-badge-green {
+    @apply eco-badge bg-eco-leaf/15 text-primary;
+  }
+  .eco-badge-coral {
+    @apply eco-badge bg-accent/15 text-accent;
+  }
+  .eco-stat-card {
+    @apply eco-card p-6 flex flex-col gap-2;
+  }
+  .eco-section {
+    @apply py-16 md:py-24;
+  }
+  .eco-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
