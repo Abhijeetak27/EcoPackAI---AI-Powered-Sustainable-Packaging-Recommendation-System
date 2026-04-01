@@ -1,5 +1,4 @@
 import { Leaf } from "lucide-react";
-import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -9,11 +8,6 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             <Leaf className="w-5 h-5 text-eco-leaf" />
             <span className="font-bold text-foreground">EcoPackAI</span>
-          </div>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
-            <Link to="/dashboard" className="hover:text-foreground transition-colors">Dashboard</Link>
-            <Link to="/materials" className="hover:text-foreground transition-colors">Materials</Link>
           </div>
           <p className="text-sm text-muted-foreground">
             © 2026 EcoPackAI. Sustainable by design.
